@@ -172,6 +172,33 @@ a:hover {
   background: var(--teal-soft);
   box-shadow: 0 0 10px var(--teal);
 }
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top:hover {
+  box-shadow: 0 0 10px var(--teal);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 .quiz-result {
   margin-top: 0.75rem;
