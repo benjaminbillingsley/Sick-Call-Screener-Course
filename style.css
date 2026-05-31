@@ -1,5 +1,5 @@
 /* ================================
-   CYBER‑RETRO THEME — SCSC COURSE
+   TACTICAL TERMINAL THEME (NO SCANLINES)
    ================================ */
 
 :root {
@@ -7,10 +7,11 @@
   --bg-alt: #0b0b1a;
   --panel: #0f0f24;
 
-  --accent: #00f6ff;        /* Neon cyan */
-  --accent-soft: rgba(0, 246, 255, 0.18);
-  --accent-2: #ff2fd0;      /* Neon magenta */
-  --accent-2-soft: rgba(255, 47, 208, 0.18);
+  --teal: #00f6ff;
+  --teal-soft: rgba(0, 246, 255, 0.18);
+
+  --magenta: #ff2fd0;
+  --magenta-soft: rgba(255, 47, 208, 0.18);
 
   --text: #f5f5ff;
   --muted: #9a9ac0;
@@ -41,48 +42,48 @@ body {
    ================================ */
 
 a {
-  color: var(--accent);
+  color: var(--teal);
   text-decoration: none;
   transition: 0.2s ease;
 }
 
 a:hover {
-  text-shadow: 0 0 6px var(--accent);
+  text-shadow: 0 0 6px var(--teal);
 }
 
 /* ================================
    PAGE STRUCTURE
    ================================ */
 
-.page {
+.terminal-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.page-header {
+.terminal-header {
   padding: 1.5rem 1.75rem;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(90deg, #050510, #15153a);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
-.page-header h1 {
+.terminal-title {
   margin: 0;
   font-family: var(--font-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 0 8px var(--accent);
+  color: var(--teal);
+  text-shadow: 0 0 8px var(--teal);
 }
 
-.subtitle {
+.terminal-subtitle {
   margin-top: 0.4rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.page-main {
+.terminal-main {
   flex: 1;
   max-width: 960px;
   margin: 0 auto;
@@ -90,104 +91,79 @@ a:hover {
 }
 
 /* ================================
-   HEADINGS
+   PANELS
    ================================ */
 
-.page-main h2 {
-  margin-top: 2rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.25rem;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  text-shadow: 0 0 6px var(--accent);
+.terminal-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 246, 255, 0.08);
 }
 
-.page-main h3 {
-  margin-top: 1.5rem;
-  color: var(--accent-2);
+.panel-title {
+  margin-top: 0;
   font-family: var(--font-mono);
-  text-shadow: 0 0 6px var(--accent-2);
+  color: var(--magenta);
+  text-shadow: 0 0 6px var(--magenta);
 }
 
-.page-main h4 {
-  margin-top: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.85rem;
+.panel-text {
+  color: var(--text);
+}
+
+/* ================================
+   LISTS
+   ================================ */
+
+.terminal-list {
+  padding-left: 1.2rem;
   color: var(--muted);
 }
 
 /* ================================
-   TABLE OF CONTENTS
-   ================================ */
-
-.toc {
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  box-shadow: 0 0 12px rgba(0, 246, 255, 0.08);
-}
-
-.toc h2 {
-  margin-top: 0;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.toc h3 {
-  margin-top: 1rem;
-}
-
-/* ================================
-   QUIZ BLOCK
+   QUIZ
    ================================ */
 
 .quiz-question {
   margin-top: 1rem;
   padding: 0.9rem 1rem;
   border-radius: 8px;
-  background: var(--panel);
+  background: #0d0d20;
   border: 1px solid var(--border);
-  box-shadow: 0 0 10px rgba(255, 47, 208, 0.08);
-}
-
-.quiz-question p {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.quiz-question label {
-  display: block;
-  margin-bottom: 0.25rem;
-  cursor: pointer;
   transition: 0.2s ease;
 }
 
-.quiz-question label:hover {
-  color: var(--accent);
-  text-shadow: 0 0 6px var(--accent);
+.quiz-question.correct-glow {
+  box-shadow: 0 0 12px var(--teal);
+  border-color: var(--teal);
 }
 
-#submit-quiz {
+.quiz-question.incorrect-glow {
+  box-shadow: 0 0 12px var(--magenta);
+  border-color: var(--magenta);
+}
+
+.terminal-button {
   margin-top: 1rem;
   padding: 0.5rem 1.1rem;
   border-radius: 999px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--teal);
   background: transparent;
-  color: var(--accent);
+  color: var(--teal);
   cursor: pointer;
   font-size: 0.9rem;
   transition: 0.2s ease;
 }
 
-#submit-quiz:hover {
-  background: var(--accent-soft);
-  box-shadow: 0 0 10px var(--accent);
+.terminal-button:hover {
+  background: var(--teal-soft);
+  box-shadow: 0 0 10px var(--teal);
 }
 
-#quiz-result {
+.quiz-result {
   margin-top: 0.75rem;
   font-size: 0.9rem;
   color: var(--muted);
@@ -197,21 +173,11 @@ a:hover {
    FOOTER
    ================================ */
 
-.page-footer {
+.terminal-footer {
   padding: 0.75rem 1.75rem;
   border-top: 1px solid var(--border);
   background: #050510;
   font-size: 0.8rem;
   color: var(--muted);
   text-align: center;
-}
-
-/* ================================
-   RESPONSIVE
-   ================================ */
-
-@media (max-width: 640px) {
-  .page-main {
-    padding: 1.25rem 1rem 2rem;
-  }
 }
