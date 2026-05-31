@@ -114,6 +114,16 @@ a:hover {
   color: var(--text);
 }
 
+.subheader {
+  font-family: var(--font-mono);
+  color: var(--teal);
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 6px var(--teal);
+  font-size: 1.05rem;
+}
+
+
 /* ================================
    LISTS
    ================================ */
