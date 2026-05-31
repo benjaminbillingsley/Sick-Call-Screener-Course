@@ -123,6 +123,14 @@ a:hover {
   color: var(--muted);
 }
 
+/* HUD ICON STYLE — paste here */
+.toc-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 4px var(--magenta));
+}
 /* ================================
    QUIZ
    ================================ */
